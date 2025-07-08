@@ -1,0 +1,55 @@
+# version: "3.3"
+
+# services:
+#   kong:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     image: kong:3.6.0
+#     container_name: kong
+#     volumes:
+#       - "./config:/usr/local/kong/declarative"
+#       - "./plugin:/usr/local/share/lua/5.1/kong/plugins"
+#     environment:
+#       KONG_DATABASE: "off"
+#       KONG_DECLARATIVE_CONFIG: "/usr/local/kong/declarative/kong.yml"
+#       KONG_PLUGINS: "bundled,auth-validator"
+#       KONG_LUA_PACKAGE_PATH: "/usr/local/share/lua/5.1/?.lua;;"
+#     ports:
+#       - "8000:8000"
+#       - "8001:8001"
+#       - "8443:8443"
+#       - "8444:8444"
+#     networks:
+#       - isolated-net
+
+# networks:
+#   isolated-net:
+#     driver: bridge
+
+
+
+services:
+  kong:
+    image: kong:3.6.0
+    container_name: kong
+    ports:
+      - "8000:8000"   # Proxy
+      - "8443:8443"   # Proxy SSL
+      - "8001:8001"   # Admin API
+      - "8444:8444"   # Admin API SSL
+    environment:
+      KONG_DATABASE: "off"
+      KONG_DECLARATIVE_CONFIG: /usr/local/kong/declarative/kong.yml
+      KONG_PLUGINS: bundled,auth-validator
+      KONG_LOG_LEVEL: debug
+      KONG_LUA_PACKAGE_PATH: /usr/local/share/lua/5.1/?.lua;;
+    volumes:
+      - ./config/kong.yml:/usr/local/kong/declarative/kong.yml
+      - ./plugin/auth-validator:/usr/local/share/lua/5.1/kong/plugins/auth-validator
+    networks:
+      - isolated-net
+
+networks:
+  isolated-net:
+    driver: bridge

@@ -1,0 +1,240 @@
+[
+    {
+        "Id": "3db4fe076eca973ef483f981b535b8e3778461c6b2c7a29b39e6ec5d39005444",
+        "Created": "2025-07-01T13:18:44.661237396Z",
+        "Path": "java",
+        "Args": [
+            "-jar",
+            "/app/app.jar"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 49228,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-07-01T16:52:09.495590508Z",
+            "FinishedAt": "2025-07-01T16:51:37.574041328Z"
+        },
+        "Image": "sha256:68e663ab740154d13b49a2b1d99968af9981cdcb58ff497946dca34d6eeb8a3e",
+        "ResolvConfPath": "/var/lib/docker/containers/3db4fe076eca973ef483f981b535b8e3778461c6b2c7a29b39e6ec5d39005444/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/3db4fe076eca973ef483f981b535b8e3778461c6b2c7a29b39e6ec5d39005444/hostname",
+        "HostsPath": "/var/lib/docker/containers/3db4fe076eca973ef483f981b535b8e3778461c6b2c7a29b39e6ec5d39005444/hosts",
+        "LogPath": "/var/lib/docker/containers/3db4fe076eca973ef483f981b535b8e3778461c6b2c7a29b39e6ec5d39005444/3db4fe076eca973ef483f981b535b8e3778461c6b2c7a29b39e6ec5d39005444-json.log",
+        "Name": "/authservice",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "expensetrackerappusingjavaspringbootandreactnative_isolated-net",
+            "PortBindings": {
+                "9898/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "9898"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "3db4fe076eca973ef483f981b535b8e3778461c6b2c7a29b39e6ec5d39005444",
+                "LowerDir": "/var/lib/docker/overlay2/7d896f1e37d1667391aacd310bd776128e7d6318f00d633b9922c1f227d240de-init/diff:/var/lib/docker/overlay2/fg7xr3ppybtkfbg3rnjrtgw43/diff:/var/lib/docker/overlay2/1a738vcs11vtah9kve1vtpqz7/diff:/var/lib/docker/overlay2/0fdf0008c76cc256199c5e8af0a21cf9abaf5c01b8ae5568ecb5d0597308b219/diff:/var/lib/docker/overlay2/514a115f219185c96f50eb3273415fcdd7f59420b2b27b7b1d0256b229d28c50/diff",
+                "MergedDir": "/var/lib/docker/overlay2/7d896f1e37d1667391aacd310bd776128e7d6318f00d633b9922c1f227d240de/merged",
+                "UpperDir": "/var/lib/docker/overlay2/7d896f1e37d1667391aacd310bd776128e7d6318f00d633b9922c1f227d240de/diff",
+                "WorkDir": "/var/lib/docker/overlay2/7d896f1e37d1667391aacd310bd776128e7d6318f00d633b9922c1f227d240de/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "3db4fe076eca",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "9898/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "JAVA_HOME=/usr/lib/jvm/java-21-amazon-corretto"
+            ],
+            "Cmd": null,
+            "Image": "authservice",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "java",
+                "-jar",
+                "/app/app.jar"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "6ff357c33ba38e92898eff93b0dda9c3429eac03ef1294724058b1b42049dda2",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "kafka:service_started:false,mysql:service_started:false",
+                "com.docker.compose.image": "sha256:68e663ab740154d13b49a2b1d99968af9981cdcb58ff497946dca34d6eeb8a3e",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "expensetrackerappusingjavaspringbootandreactnative",
+                "com.docker.compose.project.config_files": "C:\\Users\\SANJAY\\Desktop\\Start\\Java\\ExpenseTrackerAppUsingJavaSpringBootAndReactNative\\service.yml",
+                "com.docker.compose.project.working_dir": "C:\\Users\\SANJAY\\Desktop\\Start\\Java\\ExpenseTrackerAppUsingJavaSpringBootAndReactNative",
+                "com.docker.compose.service": "authservice",
+                "com.docker.compose.version": "2.35.1"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "6620738000a9498a248c760c613e917d404be14335b00a09619ea66507385ee3",
+            "SandboxKey": "/var/run/docker/netns/6620738000a9",
+            "Ports": {
+                "9898/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "9898"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "expensetrackerappusingjavaspringbootandreactnative_isolated-net": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "authservice",
+                        "authservice"
+                    ],
+                    "MacAddress": "ee:15:85:50:70:66",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "4c919e66c276539d9e6284b64731e06131be248fecdb7b988eab2baa290ff2b4",
+                    "EndpointID": "5cae5f88a8ea2881dd706bd0c54f8b4ce1495cfe8ebf5d17c3e9ffa47350bb2f",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.5",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "authservice",
+                        "3db4fe076eca"
+                    ]
+                }
+            }
+        }
+    }
+]

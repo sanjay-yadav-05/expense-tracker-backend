@@ -1,0 +1,115 @@
+version: '3'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.4
+    container_name: zookeeper
+    hostname: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 2181:2181
+    networks:
+      - isolated-net
+
+  kafka:
+    image: confluentinc/cp-kafka:7.4.4
+    container_name: kafka
+    hostname: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - 9092:9092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - isolated-net
+
+  mysql:
+    image: mysql:8.3.0
+    container_name: mysql-8.3.0
+    hostname: mysql
+    restart: always
+    environment:
+      MYSQL_USER: test
+      MYSQL_ROOT_USER: root
+      MYSQL_PASSWORD: 'S@nj@yy@d@v@8483'
+      MYSQL_ROOT_PASSWORD: 'S@nj@yy@d@v@8483'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - mysql-db:/var/lib/mysql
+    networks:
+      - isolated-net
+
+  userservice:
+    image: userservice
+    container_name: userservice
+    ports:
+      - '9810:9810'
+    depends_on:
+      - kafka
+      - mysql
+    networks:
+      - isolated-net
+
+  authservice:
+    image: authservice
+    container_name: authservice
+    ports:
+      - '9898:9898'
+    depends_on:
+      - kafka
+      - mysql
+    networks:
+      - isolated-net
+
+  flask:
+    image: messageextractionsevice
+    container_name: messageextractionsevice
+    hostname: messageextractionsevice
+    ports:
+      - "8010:8010"
+    environment:
+      - FLASK_RUN_PORT=8010
+      - FLASK_RUN_HOST=0.0.0.0
+      - KAFKA_HOST=kafka
+      - KAFKA_PORT=9092
+    depends_on:
+      - kafka
+      - mysql
+      - authservice
+      - userservice
+    networks:
+      - isolated-net
+
+  expenseservice:
+    image: expenseservice
+    container_name: expenseservice
+    hostname: expenseservice
+    ports:
+      - "9820:9820"
+    depends_on:
+      - kafka
+      - mysql
+      - authservice
+      - userservice
+    networks:
+      - isolated-net
+
+volumes:
+  mysql-db:
+    driver: local
+
+networks:
+  isolated-net:
+    driver: bridge

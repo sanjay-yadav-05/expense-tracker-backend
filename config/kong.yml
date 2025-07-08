@@ -1,0 +1,183 @@
+# _format_version: "2.1"
+# _transform: true
+
+# services:
+#   - name: kong-status
+#     url: http://localhost:8001
+#     routes:
+#       - name: status-route
+#         paths:
+#           - /status
+#         strip_path: true
+#     plugins:
+#       - name: request-termination
+#         config:
+#           status_code: 200
+#           message: "OK"
+#   - name: expenseservice
+#     url: http://expenseservice:9820
+#     routes:
+#       - name: expense-route
+#         paths:
+#           - /expense/v1
+#         strip_path: false
+#         preserve_host: false
+#     plugins:
+#       - name: auth-validator
+#         config:
+#           auth_service_url: "http://authservice:9898/auth/v1/ping"
+#   - name: messageextractionsevice
+#     url: http://messageextractionsevice:8010
+#     routes:
+#       - name: ds-route
+#         paths:
+#           - /v1/ds
+#         strip_path: false
+#         preserve_host: false
+#     plugins:
+#       - name: auth-validator
+#         config:
+#           auth_service_url: "http://authservice:9898/auth/v1/ping"
+#   - name: userservice
+#     url: http://userservice:9810
+#     routes:
+#       - name: user-route
+#         paths:
+#           - /v1/ds
+#         strip_path: false
+#         preserve_host: false
+#     plugins:
+#       - name: auth-validator
+#         config:
+#           auth_service_url: "http://authservice:9898/auth/v1/ping"
+  
+
+#   - name: authservice
+#     url: http://authservice:9898
+#     routes:
+#       - name: auth-route
+#         paths:
+#           - /auth/v1
+#         strip_path: false
+#         preserve_host: false
+
+
+
+# _format_version: "3.0"
+# _transform: true
+
+# services:
+#   - name: kong-status
+#     url: http://localhost:8001
+#     routes:
+#       - name: status-route
+#         paths:
+#           - /status
+#         strip_path: true
+#     # plugins:
+#     #   - name: request-termination
+#     #     config:
+#     #       status_code: 200
+#     #       message: "OK"
+          
+#   - name: expenseservice
+#     url: http://expenseservice:9820
+#     routes:
+#       - name: expense-route
+#         paths:
+#           - /expense/v1
+#         strip_path: false
+#         preserve_host: false
+#     plugins:
+#       - name: auth-validator
+#         config:
+#           auth_service_url: "http://authservice:9898/auth/v1/ping"
+          
+#   - name: messageextractionsevice
+#     url: http://messageextractionsevice:8010
+#     routes:
+#       - name: messageextraction-route
+#         paths:
+#           - /v1/ds
+#         strip_path: false
+#         preserve_host: false
+#     plugins:
+#       - name: auth-validator
+#         config:
+#           auth_service_url: "http://authservice:9898/auth/v1/ping"
+          
+#   - name: userservice
+#     url: http://userservice:9810
+#     routes:
+#       - name: user-route
+#         paths:
+#           - /user/v1
+#         strip_path: false
+#         preserve_host: false
+#     plugins:
+#       - name: auth-validator
+#         config:
+#           auth_service_url: "http://authservice:9898/auth/v1/ping"
+          
+#   - name: authservice
+#     url: http://authservice:9898
+#     routes:
+#       - name: auth-route
+#         paths:
+#           - /auth/v1
+#         strip_path: false
+#         preserve_host: false
+
+
+
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: expenseservice
+    url: http://expenseservice:9820
+    routes:
+      - name: expense-route
+        paths:
+          - /expense/v1
+        strip_path: false
+        preserve_host: false
+    plugins:
+      - name: auth-validator
+        config:
+          auth_service_url: "http://authservice:9898/auth/v1/ping"
+
+  - name: messageextractionservice
+    url: http://messageextractionservice:8010
+    routes:
+      - name: message-route
+        paths:
+          - /v1/ds
+        strip_path: false
+        preserve_host: false
+    plugins:
+      - name: auth-validator
+        config:
+          auth_service_url: "http://authservice:9898/auth/v1/ping"
+
+  - name: userservice
+    url: http://userservice:9810
+    routes:
+      - name: user-route
+        paths:
+          - /user/v1
+        strip_path: false
+        preserve_host: false
+    plugins:
+      - name: auth-validator
+        config:
+          auth_service_url: "http://authservice:9898/auth/v1/ping"
+
+  - name: authservice
+    url: http://authservice:9898
+    routes:
+      - name: auth-route
+        paths:
+          - /auth/v1
+        strip_path: false
+        preserve_host: false
